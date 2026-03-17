@@ -58,7 +58,7 @@ public class LeaveController {
     }
 
     @GetMapping("/hello/{name}")
-    public ResponseEntity<Map<String, Object>> getHello(@PathVariable String name) {
+    public ResponseEntity<Object> getHello(@PathVariable String name) {
         Map<String, Obejct> response = new HashMap<>();
         String greeting = "Hello, " + name + "! Welcome to the Leave Management System.";
         response.put("message", greeting);
