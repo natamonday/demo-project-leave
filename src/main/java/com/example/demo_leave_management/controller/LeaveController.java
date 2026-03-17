@@ -56,4 +56,12 @@ public class LeaveController {
         List<Leave> leaves = leaveService.getLeavesByStatus(status);
         return ResponseEntity.ok(leaves);
     }
+
+    @GetMapping("/hello/{name}")
+    public ResponseEntity<Map<String, Object>> getHello(@PathVariable String name) {
+        Map<String, Obejct> response = new HashMap<>();
+        String greeting = "Hello, " + name + "! Welcome to the Leave Management System.";
+        response.put("message", greeting);
+        return ResponseEntity.ok(response);
+    }
 }
