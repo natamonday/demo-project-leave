@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+import java.util.Map;
+import java.util.HashMap;
+import java.lang.Object;
+
 @RestController
 @RequestMapping("/api/leaves")
 public class LeaveController {
@@ -59,7 +63,7 @@ public class LeaveController {
 
     @GetMapping("/hello/{name}")
     public ResponseEntity<Object> getHello(@PathVariable String name) {
-        Map<String, Obejct> response = new HashMap<>();
+        Map<String, Object> response = new HashMap<>();
         String greeting = "Hello, " + name + "! Welcome to the Leave Management System.";
         response.put("message", greeting);
         return ResponseEntity.ok(response);
